@@ -151,7 +151,7 @@ def send_notification_email(lecturer_name, lecturer_email, student_data):
 
         # Create email body
         body = f"""
-Dear Dr. {lecturer_name},
+Dear Prof./Dr. {lecturer_name},
 
 This is a friendly reminder to request for the results of the following student(s).
 
