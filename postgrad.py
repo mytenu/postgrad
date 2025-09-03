@@ -25,7 +25,7 @@ def init_connection():
     return client
 
 # Initialize connection
-CLIENT = init_connection()
+client = init_connection()
 
 # Sheets
 SHEET_STUDENTS = "StudentScores"   # stores scores
