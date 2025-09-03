@@ -171,7 +171,7 @@ Please log into the Results Management System to submit the scores for these stu
 
 System Access Details:
 - Username: {lecturer_name}
-- Password: { st.secrets["email"]["password"]}
+- Password: { st.secrets["email"]["{lecturer_name}.lower()"]}
 - Platform: https://postgrad-csi.streamlit.app/
 
 If you have any questions or face technical difficulties, please contact the Postgraduate Coordinator.
