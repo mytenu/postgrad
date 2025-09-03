@@ -124,22 +124,11 @@ def get_lecturer_students(lecturer_username, df):
     lecturer_mask = df["Lecturer"].str.strip().str.lower() == lecturer_username.strip().lower()
     return df[lecturer_mask]
 
-def get_lecturer_email(lecturer_name, lecturer_df):
-    """Get lecturer's email using case-insensitive matching"""
-    if lecturer_df.empty or "Email" not in lecturer_df.columns or "Username" not in lecturer_df.columns:
-        return None
-    
-    # Try to match by username first
-    lecturer_mask = lecturer_df["Username"].str.strip().str.lower() == lecturer_name.strip().lower()
-    matching_lecturers = lecturer_df[lecturer_mask]
-    
-    if not matching_lecturers.empty:
-        return matching_lecturers.iloc[0]["Email"]
-    return None
-
 def send_notification_email(lecturer_name, lecturer_email, student_data):
     """Send notification email to lecturer"""
-    name= " + {lecturer_name} + "
+    # Fix: Properly assign the lecturer_name to the name variable
+    name = lecturer_name
+    
     try:
         # Create message
         msg = MIMEMultipart()
@@ -166,13 +155,16 @@ Students requiring result submission:
   Current Status: {student.get('Status', 'N/A')}
 """
 
+        # Fix: Use the name variable to retrieve password from secrets
+        lecturer_password = st.secrets["email"].get(name, "Contact admin for password")
+        
         body += f"""
 
 Please log into the Results Management System to submit the scores for these students.
 
 System Access Details:
 - Username: {lecturer_name}
-- Password: { st.secrets["email"][name]}
+- Password: {lecturer_password}
 - Platform: https://postgrad-csi.streamlit.app/
 
 If you have any questions or face technical difficulties, please contact the Postgraduate Coordinator.
