@@ -38,10 +38,10 @@ sheet_users = client.open(SHEET_USERS).sheet1
 # EMAIL CONFIGURATION
 # ========================
 # Configure these with your email settings
-EMAIL_HOST = "smtp.gmail.com"  # Change to your email provider's SMTP server
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_USER = "mighty.abra.ayidzoe@gmail.com"  # Change to your email
-EMAIL_PASSWORD = st.secrets["email_password"]  # Use app password for Gmail
+EMAIL_USER = st.secrets["email"]["user"]
+EMAIL_PASSWORD = st.secrets["email"]["password"]
 
 # ========================
 # HELPER FUNCTIONS
