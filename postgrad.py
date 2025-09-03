@@ -33,13 +33,13 @@ SHEET_USERS = "Lecturers"          # stores lecturer login
 
 sheet_students = client.open(SHEET_STUDENTS).sheet1
 sheet_users = client.open(SHEET_USERS).sheet1
-
-# Debug: See what's in secrets
-st.write("Available secrets keys:", list(st.secrets.keys()))
-
-# Debug: See what's in secrets
-st.write("Available secrets keys:", list(st.secrets.keys()))
 """
+# Debug: See what's in secrets
+st.write("Available secrets keys:", list(st.secrets.keys()))
+
+# Debug: See what's in secrets
+st.write("Available secrets keys:", list(st.secrets.keys()))
+
 # Check gcp_service_account contents
 st.write("gcp_service_account contents:")
 if "gcp_service_account" in st.secrets:
