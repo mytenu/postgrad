@@ -42,7 +42,7 @@ sheet_users = client.open(SHEET_USERS).sheet1
 # Configure these with your email settings
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_USER = st.secrets["email_password"]["user"]
+EMAIL_USER = st.secrets["email_password"][0]
 EMAIL_PASSWORD = st.secrets["email_password"]["password"]
 
 # ========================
