@@ -35,11 +35,6 @@ sheet_students = client.open(SHEET_STUDENTS).sheet1
 sheet_users = client.open(SHEET_USERS).sheet1
 
 
-st.write("Secrets keys:", list(st.secrets.keys()))
-if "email" in st.secrets:
-    st.write("Email user:", st.secrets["email"]["user"])
-else:
-    st.error("⚠️ No [email] section found in secrets!")
 
 # ========================
 # EMAIL CONFIGURATION
@@ -48,7 +43,7 @@ else:
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USER = st.secrets["email"]["user"]
-EMAIL_PASSWORD = st.secrets["email"]["password"]
+EMAIL_PASSWORD = st.secrets["email_password"]["password"]
 
 # ========================
 # HELPER FUNCTIONS
