@@ -37,13 +37,22 @@ sheet_users = client.open(SHEET_USERS).sheet1
 # Debug: See what's in secrets
 st.write("Available secrets keys:", list(st.secrets.keys()))
 
-# Check each key individually
-for key in st.secrets.keys():
-    st.write(f"Key: {key}")
-    st.write(f"Type: {type(st.secrets[key])}")
-    if isinstance(st.secrets[key], dict):
-        st.write(f"Sub-keys: {list(st.secrets[key].keys())}")
-    st.write("---")
+# Debug: See what's in secrets
+st.write("Available secrets keys:", list(st.secrets.keys()))
+
+# Check gcp_service_account contents
+st.write("gcp_service_account contents:")
+if "gcp_service_account" in st.secrets:
+    gcp_keys = list(st.secrets["gcp_service_account"].keys())
+    st.write("GCP keys:", gcp_keys)
+    for key in gcp_keys:
+        st.write(f"  {key}: {type(st.secrets['gcp_service_account'][key])}")
+
+# Check email_password
+st.write("email_password:")
+if "email_password" in st.secrets:
+    st.write(f"  Type: {type(st.secrets['email_password'])}")
+    st.write(f"  Value length: {len(str(st.secrets['email_password']))}")
 
 # ========================
 # EMAIL CONFIGURATION
