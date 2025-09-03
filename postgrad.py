@@ -34,7 +34,16 @@ SHEET_USERS = "Lecturers"          # stores lecturer login
 sheet_students = client.open(SHEET_STUDENTS).sheet1
 sheet_users = client.open(SHEET_USERS).sheet1
 
+# Debug: See what's in secrets
+st.write("Available secrets keys:", list(st.secrets.keys()))
 
+# Check each key individually
+for key in st.secrets.keys():
+    st.write(f"Key: {key}")
+    st.write(f"Type: {type(st.secrets[key])}")
+    if isinstance(st.secrets[key], dict):
+        st.write(f"Sub-keys: {list(st.secrets[key].keys())}")
+    st.write("---")
 
 # ========================
 # EMAIL CONFIGURATION
