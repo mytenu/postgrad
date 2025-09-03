@@ -139,7 +139,7 @@ def get_lecturer_email(lecturer_name, lecturer_df):
 
 def send_notification_email(lecturer_name, lecturer_email, student_data):
     """Send notification email to lecturer"""
-    name= " + lecturer_name + "
+    name= " + {lecturer_name} + "
     try:
         # Create message
         msg = MIMEMultipart()
