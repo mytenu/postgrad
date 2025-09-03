@@ -60,8 +60,8 @@ if "email_password" in st.secrets:
 # Configure these with your email settings
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_USER = st.secrets["email_password"]["0"]
-EMAIL_PASSWORD = st.secrets["email_password"]["1"]
+EMAIL_USER = st.secrets["email"]["user]
+EMAIL_PASSWORD = st.secrets["email"]["password"]
 
 # ========================
 # HELPER FUNCTIONS
