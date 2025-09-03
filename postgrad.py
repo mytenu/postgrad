@@ -39,7 +39,7 @@ st.write("Available secrets keys:", list(st.secrets.keys()))
 
 # Debug: See what's in secrets
 st.write("Available secrets keys:", list(st.secrets.keys()))
-
+"""
 # Check gcp_service_account contents
 st.write("gcp_service_account contents:")
 if "gcp_service_account" in st.secrets:
@@ -53,7 +53,7 @@ st.write("email_password:")
 if "email_password" in st.secrets:
     st.write(f"  Type: {type(st.secrets['email_password'])}")
     st.write(f"  Value length: {len(str(st.secrets['email_password']))}")
-
+"""
 # ========================
 # EMAIL CONFIGURATION
 # ========================
