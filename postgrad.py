@@ -139,6 +139,7 @@ def get_lecturer_email(lecturer_name, lecturer_df):
 
 def send_notification_email(lecturer_name, lecturer_email, student_data):
     """Send notification email to lecturer"""
+    name= " + lecturer_name + "
     try:
         # Create message
         msg = MIMEMultipart()
@@ -171,7 +172,7 @@ Please log into the Results Management System to submit the scores for these stu
 
 System Access Details:
 - Username: {lecturer_name}
-- Password: { st.secrets["email"]["{lecturer_name}.lower()"]}
+- Password: { st.secrets["email"][name]}
 - Platform: https://postgrad-csi.streamlit.app/
 
 If you have any questions or face technical difficulties, please contact the Postgraduate Coordinator.
