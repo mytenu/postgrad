@@ -183,6 +183,8 @@ System Access Details:
 If you have any questions or face technical difficulties, please contact the Postgraduate Coordinator.
 
 Best regards,
+Dr. Mighty Abra Ayidzoe
+Tel: 0547613150
 Postgraduate Coordinator
 Department of Computer Science and Informatics
 """
